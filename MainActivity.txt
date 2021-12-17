@@ -1,0 +1,30 @@
+package com.example.application2.ui.activity;
+
+import android.os.Bundle;
+import com.example.application2.R;
+import com.example.application2.common.activity.BaseActivity;
+import android.widget.ListView;
+
+public class MainActivity extends BaseActivity { 
+	String[] maintitle ={  
+		"Title 1","Title 2",  
+		"Title 3","Title 4",  
+		"Title 5",  
+    };  
+ListView  list;
+    String[] subtitle ={  
+		"Sub Title 1","Sub Title 2",  
+		"Sub Title 3","Sub Title 4",  
+		"Sub Title 5",  
+    };  
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        MyListAdapter adapter=new MyListAdapter(this, maintitle, subtitle);  
+        list=findViewById(R.id.list);  
+        list.setAdapter(adapter);  
+        
+    }
+
+}
